@@ -223,25 +223,17 @@
     /* ── EXPERIENCE ── */
     #experience { background: rgba(255,255,255,.015); }
     [data-theme="light"] #experience { background: rgba(0,0,0,.02); }
-    .timeline { display: flex; flex-direction: column; gap: 0; position: relative; }
-    .timeline::before {
-      content: ''; position: absolute; left: 18px; top: 0; bottom: 0; width: 2px;
-      background: linear-gradient(180deg, var(--pink), var(--purple), var(--cyan), transparent);
-    }
+    .timeline { display: flex; flex-direction: column; gap: 1.5rem; }
     .exp-card {
       background: var(--card); border: 1px solid var(--border);
-      border-radius: 1.25rem; padding: 2rem 2rem 2rem 3.5rem; position: relative;
-      margin-bottom: 1.5rem;
+      border-radius: 1.25rem; padding: 2rem; position: relative; overflow: hidden;
       transition: border-color .25s, box-shadow .25s, transform .25s;
     }
     .exp-card::before {
-      content: ''; position: absolute; left: 10px; top: 2rem;
-      width: 16px; height: 16px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--pink), var(--purple));
-      border: 3px solid var(--dark); z-index: 1;
-      transition: background .3s;
+      content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px;
+      background: linear-gradient(180deg, var(--pink), var(--purple), var(--cyan));
     }
-    .exp-card:hover { border-color: rgba(168,85,247,.5); box-shadow: 0 8px 35px rgba(168,85,247,.18); transform: translateX(4px); }
+    .exp-card:hover { border-color: rgba(168,85,247,.5); box-shadow: 0 8px 35px rgba(168,85,247,.18); transform: translateY(-3px); }
     .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: .5rem; margin-bottom: .75rem; }
     .exp-title { font-size: 1.05rem; font-weight: 700; }
     .exp-company { font-size: .85rem; color: var(--purple); font-weight: 600; margin-top: .15rem; }
@@ -366,9 +358,7 @@
       .about-grid { grid-template-columns: 1fr; }
       .about-stats { grid-template-columns: 1fr 1fr; }
       .exp-header { flex-direction: column; }
-      .timeline::before { left: 10px; }
-      .exp-card { padding-left: 2.5rem; }
-      .exp-card::before { left: 3px; }
+      .exp-card { padding: 1.5rem; }
     }
     @media (max-width: 480px) {
       .about-stats { grid-template-columns: 1fr 1fr; }
