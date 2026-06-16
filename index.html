@@ -14,6 +14,7 @@
       --blue:   #3b82f6;
       --cyan:   #06b6d4;
       --yellow: #fbbf24;
+      --green:  #22c55e;
       --dark:   #0f0f1a;
       --card:   #1a1a2e;
       --text:   #e2e8f0;
@@ -21,19 +22,12 @@
     }
 
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--dark);
-      color: var(--text);
-      line-height: 1.6;
-    }
+    body { font-family: 'Poppins', sans-serif; background: var(--dark); color: var(--text); line-height: 1.6; }
 
     /* ── NAV ── */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(15,15,26,0.85);
-      backdrop-filter: blur(12px);
+      background: rgba(15,15,26,0.9); backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(168,85,247,0.2);
       display: flex; align-items: center; justify-content: space-between;
       padding: 1rem 2.5rem;
@@ -43,11 +37,8 @@
       background: linear-gradient(135deg, var(--pink), var(--purple), var(--blue));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      color: var(--muted); text-decoration: none; font-weight: 500;
-      transition: color .2s;
-    }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: .88rem; transition: color .2s; }
     .nav-links a:hover { color: var(--pink); }
 
     /* ── HERO ── */
@@ -66,60 +57,46 @@
       letter-spacing: .1em; text-transform: uppercase;
       padding: .35rem 1rem; border-radius: 999px; margin-bottom: 1.5rem;
     }
-    #hero h1 {
-      font-size: clamp(2.8rem, 7vw, 5rem);
-      font-weight: 800; line-height: 1.1; margin-bottom: 1rem;
-    }
+    #hero h1 { font-size: clamp(2.8rem, 7vw, 5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1rem; }
     .gradient-text {
       background: linear-gradient(135deg, var(--pink), var(--purple), var(--cyan));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-    #hero p {
-      font-size: 1.15rem; color: var(--muted); max-width: 600px; margin: 0 auto 2.5rem;
-    }
+    #hero p { font-size: 1.15rem; color: var(--muted); max-width: 600px; margin: 0 auto 2.5rem; }
     .btn {
       display: inline-block; padding: .85rem 2rem; border-radius: 999px;
       font-weight: 600; font-size: .95rem; text-decoration: none;
       transition: transform .2s, box-shadow .2s;
     }
     .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(168,85,247,.4); }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--pink), var(--purple));
-      color: #fff;
-    }
-    .hobbies {
-      margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
-    }
+    .btn-primary { background: linear-gradient(135deg, var(--pink), var(--purple)); color: #fff; }
+    .hobbies { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
     .hobby-tag {
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 999px; padding: .3rem .9rem;
-      font-size: .8rem; color: var(--muted);
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 999px; padding: .3rem .9rem; font-size: .8rem; color: var(--muted);
     }
+    .hero-links { margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; }
+    .hero-link {
+      display: inline-flex; align-items: center; gap: .4rem;
+      color: var(--muted); text-decoration: none; font-size: .85rem; font-weight: 500;
+      border: 1px solid rgba(255,255,255,.1); border-radius: 999px; padding: .4rem 1rem;
+      transition: color .2s, border-color .2s;
+    }
+    .hero-link:hover { color: var(--pink); border-color: var(--pink); }
 
     /* ── SECTIONS ── */
     section { padding: 6rem 2rem; }
     .container { max-width: 1100px; margin: 0 auto; }
-    .section-label {
-      font-size: .75rem; font-weight: 700; letter-spacing: .15em;
-      text-transform: uppercase; color: var(--purple); margin-bottom: .5rem;
-    }
-    .section-title {
-      font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; margin-bottom: 3rem;
-    }
+    .section-label { font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--purple); margin-bottom: .5rem; }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; margin-bottom: 3rem; }
 
     /* ── ABOUT ── */
     #about { background: rgba(255,255,255,.015); }
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
-    }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
     .about-text p { color: var(--muted); font-size: 1.05rem; line-height: 1.9; }
-    .about-stats {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
-    }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .stat-card {
-      background: var(--card);
-      border: 1px solid rgba(168,85,247,.2);
+      background: var(--card); border: 1px solid rgba(168,85,247,.2);
       border-radius: 1rem; padding: 1.5rem; text-align: center;
     }
     .stat-card .num {
@@ -130,12 +107,10 @@
     .stat-card .label { font-size: .8rem; color: var(--muted); margin-top: .2rem; }
 
     /* ── SKILLS ── */
-    #skills { }
     .skills-group { margin-bottom: 2.5rem; }
     .skills-group-title {
-      font-size: .8rem; font-weight: 700; letter-spacing: .12em;
-      text-transform: uppercase; color: var(--cyan); margin-bottom: 1rem;
-      display: flex; align-items: center; gap: .5rem;
+      font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--cyan); margin-bottom: 1rem; display: flex; align-items: center; gap: .5rem;
     }
     .skills-group-title::after {
       content: ''; flex: 1; height: 1px;
@@ -143,10 +118,8 @@
     }
     .tags { display: flex; flex-wrap: wrap; gap: .65rem; }
     .tag {
-      padding: .45rem 1rem; border-radius: 999px;
-      font-size: .82rem; font-weight: 500;
-      border: 1px solid; cursor: default;
-      transition: transform .15s;
+      padding: .45rem 1rem; border-radius: 999px; font-size: .82rem; font-weight: 500;
+      border: 1px solid; cursor: default; transition: transform .15s;
     }
     .tag:hover { transform: translateY(-2px); }
     .tag-pink   { color: var(--pink);   border-color: rgba(255,107,157,.35); background: rgba(255,107,157,.08); }
@@ -154,13 +127,44 @@
     .tag-blue   { color: var(--blue);   border-color: rgba(59,130,246,.35);  background: rgba(59,130,246,.08); }
     .tag-cyan   { color: var(--cyan);   border-color: rgba(6,182,212,.35);   background: rgba(6,182,212,.08); }
     .tag-yellow { color: var(--yellow); border-color: rgba(251,191,36,.35);  background: rgba(251,191,36,.08); }
+    .tag-green  { color: var(--green);  border-color: rgba(34,197,94,.35);   background: rgba(34,197,94,.08); }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: rgba(255,255,255,.015); }
+    .timeline { display: flex; flex-direction: column; gap: 1.5rem; }
+    .exp-card {
+      background: var(--card); border: 1px solid rgba(168,85,247,.2);
+      border-radius: 1.25rem; padding: 2rem; position: relative; overflow: hidden;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .exp-card::before {
+      content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px;
+      background: linear-gradient(180deg, var(--pink), var(--purple), var(--cyan));
+    }
+    .exp-card:hover { border-color: rgba(168,85,247,.5); box-shadow: 0 8px 30px rgba(168,85,247,.15); }
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: .5rem; margin-bottom: .75rem; }
+    .exp-title { font-size: 1.05rem; font-weight: 700; }
+    .exp-company { font-size: .85rem; color: var(--purple); font-weight: 600; margin-top: .15rem; }
+    .exp-date {
+      font-size: .75rem; color: var(--muted); font-weight: 500;
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 999px; padding: .25rem .75rem; white-space: nowrap;
+    }
+    .exp-body { color: var(--muted); font-size: .9rem; line-height: 1.8; }
+    .exp-body ul { padding-left: 1.2rem; margin-top: .5rem; }
+    .exp-body li { margin-bottom: .35rem; }
+    .exp-metric {
+      display: inline-flex; align-items: center; gap: .4rem;
+      margin-top: .75rem; background: rgba(34,197,94,.08);
+      border: 1px solid rgba(34,197,94,.25); border-radius: .5rem;
+      padding: .4rem .85rem; font-size: .8rem; color: var(--green); font-weight: 600;
+    }
 
     /* ── PROJECTS ── */
-    #projects { background: rgba(255,255,255,.015); }
+    #projects { }
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
     .project-card {
-      background: var(--card);
-      border: 1px solid rgba(168,85,247,.2);
+      background: var(--card); border: 1px solid rgba(168,85,247,.2);
       border-radius: 1.25rem; padding: 2rem;
       transition: transform .2s, border-color .2s, box-shadow .2s;
       position: relative; overflow: hidden;
@@ -169,31 +173,68 @@
       content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
       background: linear-gradient(90deg, var(--pink), var(--purple), var(--cyan));
     }
-    .project-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(168,85,247,.5);
-      box-shadow: 0 12px 40px rgba(168,85,247,.2);
-    }
+    .project-card:hover { transform: translateY(-4px); border-color: rgba(168,85,247,.5); box-shadow: 0 12px 40px rgba(168,85,247,.2); }
     .project-status {
       display: inline-flex; align-items: center; gap: .4rem;
       font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em;
       color: var(--yellow); background: rgba(251,191,36,.1);
-      border: 1px solid rgba(251,191,36,.3);
-      border-radius: 999px; padding: .25rem .75rem; margin-bottom: 1rem;
+      border: 1px solid rgba(251,191,36,.3); border-radius: 999px; padding: .25rem .75rem; margin-bottom: 1rem;
     }
-    .project-status .dot {
-      width: 6px; height: 6px; border-radius: 50%; background: var(--yellow);
-      animation: pulse 1.5s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; } 50% { opacity: .3; }
-    }
+    .project-status .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--yellow); animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
     .project-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .75rem; }
     .project-card p  { color: var(--muted); font-size: .92rem; line-height: 1.7; }
-    .project-role {
-      margin-top: 1.25rem; display: flex; align-items: center; gap: .5rem;
-      font-size: .8rem; color: var(--purple); font-weight: 600;
+    .project-role { margin-top: 1.25rem; display: flex; align-items: center; gap: .5rem; font-size: .8rem; color: var(--purple); font-weight: 600; }
+
+    /* ── EDUCATION ── */
+    #education { background: rgba(255,255,255,.015); }
+    .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
+    .edu-card {
+      background: var(--card); border: 1px solid rgba(6,182,212,.2);
+      border-radius: 1.25rem; padding: 1.75rem; position: relative; overflow: hidden;
+      transition: border-color .2s, transform .2s;
     }
+    .edu-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--cyan), var(--blue));
+    }
+    .edu-card:hover { transform: translateY(-3px); border-color: rgba(6,182,212,.45); }
+    .edu-degree { font-size: 1rem; font-weight: 700; margin-bottom: .3rem; }
+    .edu-field { font-size: .85rem; color: var(--cyan); font-weight: 600; margin-bottom: .4rem; }
+    .edu-year { font-size: .78rem; color: var(--muted); }
+
+    /* ── CERTIFICATIONS ── */
+    #certifications { }
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .cert-card {
+      background: var(--card); border: 1px solid rgba(251,191,36,.2);
+      border-radius: 1rem; padding: 1.25rem 1.5rem;
+      display: flex; align-items: center; gap: 1rem;
+      transition: border-color .2s, transform .2s;
+    }
+    .cert-card:hover { transform: translateY(-2px); border-color: rgba(251,191,36,.5); }
+    .cert-icon {
+      width: 36px; height: 36px; border-radius: .6rem; flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(251,191,36,.2), rgba(255,107,157,.2));
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+    }
+    .cert-name { font-size: .88rem; font-weight: 600; }
+    .cert-issuer { font-size: .75rem; color: var(--muted); margin-top: .15rem; }
+
+    /* ── PUBLICATION ── */
+    .pub-card {
+      background: var(--card); border: 1px solid rgba(168,85,247,.2);
+      border-radius: 1.25rem; padding: 2rem; position: relative; overflow: hidden;
+      transition: border-color .2s;
+    }
+    .pub-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--purple), var(--pink));
+    }
+    .pub-card:hover { border-color: rgba(168,85,247,.5); }
+    .pub-label { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--purple); margin-bottom: .5rem; }
+    .pub-title { font-size: 1.05rem; font-weight: 700; margin-bottom: .5rem; }
+    .pub-desc { color: var(--muted); font-size: .9rem; line-height: 1.7; }
 
     /* ── FOOTER ── */
     footer {
@@ -203,16 +244,18 @@
     }
     footer a { color: var(--purple); text-decoration: none; }
     footer a:hover { color: var(--pink); }
+    .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1.2rem; }
+      .nav-links { gap: 1rem; }
       .about-grid { grid-template-columns: 1fr; }
       .about-stats { grid-template-columns: 1fr 1fr; }
+      .exp-header { flex-direction: column; }
     }
     @media (max-width: 480px) {
-      .nav-links { gap: .8rem; font-size: .85rem; }
+      .nav-links { gap: .7rem; font-size: .78rem; }
     }
   </style>
 </head>
@@ -223,17 +266,30 @@
   <span class="nav-logo">DP</span>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#certifications">Certifications</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-badge">Product Management Specialist</div>
+  <div class="hero-badge">Product Management Specialist @ Salesforce</div>
   <h1>Hi, I'm <span class="gradient-text">Deepthi P</span></h1>
   <p>An engineer turned product owner passionate about AI, digital marketing, and building products that matter.</p>
   <a href="#about" class="btn btn-primary">Get to Know Me</a>
+  <div class="hero-links">
+    <a href="https://www.linkedin.com/in/deepthip-6b2579189" target="_blank" class="hero-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://github.com/deepthiteito" target="_blank" class="hero-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      GitHub
+    </a>
+  </div>
   <div class="hobbies">
     <span class="hobby-tag">Anime Binge-Watcher</span>
     <span class="hobby-tag">Avid Reader</span>
@@ -254,8 +310,8 @@
         </p>
         <br/>
         <p>
+          Currently at Salesforce, I work on AI-led initiatives in the services domain. Previously a Product Analyst Intern, I built an AI agent using Agentforce that achieved 85% accuracy benchmarked against real-world SOWs.
           When I'm not writing user stories or refining backlogs, you'll find me deep in an anime series or lost in a good book.
-          I believe curiosity — whether in tech or storytelling — is the foundation of great products.
         </p>
       </div>
       <div class="about-stats">
@@ -268,14 +324,106 @@
           <div class="label">Current Role</div>
         </div>
         <div class="stat-card">
-          <div class="num">2+</div>
+          <div class="num">2</div>
           <div class="label">Projects Active</div>
         </div>
         <div class="stat-card">
-          <div class="num">360°</div>
-          <div class="label">Product Thinker</div>
+          <div class="num">85%</div>
+          <div class="label">AI Agent Accuracy</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <p class="section-label">Career</p>
+    <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+    <div class="timeline">
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Product Management Specialist</div>
+            <div class="exp-company">Salesforce</div>
+          </div>
+          <span class="exp-date">April 2026 – Present · Hyderabad</span>
+        </div>
+        <div class="exp-body">
+          <p>Driving AI-led product initiatives in the services domain — including SAIL and SOIL programs — as Product Owner.</p>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Product Analyst Intern</div>
+            <div class="exp-company">Salesforce</div>
+          </div>
+          <span class="exp-date">April 2025 – May 2025 · Hyderabad</span>
+        </div>
+        <div class="exp-body">
+          <ul>
+            <li>Worked on business process design, Guided Scoping Data, Salesforce cloud models, and solution delivery.</li>
+            <li>Developed an AI agent using Agentforce to auto-generate SOW Scope Statements and improve employee productivity.</li>
+            <li>Achieved <strong style="color:var(--text);">AgentBlazer Champion</strong> and <strong style="color:var(--text);">AgentBlazer Innovator</strong> badges, and Salesforce Ranger status.</li>
+          </ul>
+          <div class="exp-metric">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            85% accuracy benchmarked against 10+ real SOWs · Measurable time savings for engagement partners
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">SEO Analyst</div>
+            <div class="exp-company">Zinai Digital</div>
+          </div>
+          <span class="exp-date">Jan 2024 – Apr 2024 · Kochi</span>
+        </div>
+        <div class="exp-body">
+          <ul>
+            <li>Developed and implemented targeted SEO strategies for multiple clients, elevating organic search rankings.</li>
+            <li>Designed and optimized client websites, improving direct bookings and customer retention.</li>
+            <li>Employed content marketing and blog optimization to enhance online visibility.</li>
+          </ul>
+          <div class="exp-metric">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            110K clicks · 2.58M impressions in a single day for one client
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Program Analyst Trainee</div>
+            <div class="exp-company">Cognizant</div>
+          </div>
+          <span class="exp-date">Jan 2022 – Apr 2022</span>
+        </div>
+        <div class="exp-body">
+          <p>Learned fundamentals of Java programming and Selenium for test automation.</p>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Student Intern — Renewable Energy & Smart Grid</div>
+            <div class="exp-company">Amrita Center for Wireless Networks and Applications</div>
+          </div>
+          <span class="exp-date">Feb 2020 – Sep 2020 · Kollam</span>
+        </div>
+        <div class="exp-body">
+          <p>Worked on projects related to renewable energy and smart grid systems. Designed and simulated a 5 KW solar plant using Solar Pro 4.6.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -320,6 +468,7 @@
       <div class="tags">
         <span class="tag tag-cyan">AI Product Design</span>
         <span class="tag tag-cyan">Generative AI</span>
+        <span class="tag tag-cyan">Agentforce</span>
         <span class="tag tag-cyan">Prompt Engineering</span>
         <span class="tag tag-cyan">Digital Marketing Strategy</span>
         <span class="tag tag-cyan">SEO / SEM</span>
@@ -332,14 +481,19 @@
       <div class="skills-group-title">Tools & Platforms</div>
       <div class="tags">
         <span class="tag tag-blue">Jira</span>
-        <span class="tag tag-blue">Confluence</span>
+        <span class="tag tag-blue">Linear</span>
         <span class="tag tag-blue">Salesforce</span>
         <span class="tag tag-blue">Figma</span>
-        <span class="tag tag-blue">Miro</span>
+        <span class="tag tag-blue">Stitch</span>
         <span class="tag tag-blue">Slack</span>
         <span class="tag tag-blue">Notion</span>
+        <span class="tag tag-blue">Cursor</span>
+        <span class="tag tag-blue">Claude</span>
         <span class="tag tag-blue">Tableau</span>
         <span class="tag tag-blue">Google Analytics</span>
+        <span class="tag tag-blue">Python</span>
+        <span class="tag tag-blue">Java</span>
+        <span class="tag tag-blue">Selenium</span>
       </div>
     </div>
 
@@ -368,10 +522,10 @@
         <div class="project-status"><span class="dot"></span> In Progress</div>
         <h3>SAIL — Services AI Landscape</h3>
         <p>
-          A strategic initiative building an intelligent Service Delivery Agent to map and scale AI
-          capabilities across the services domain. SAIL streamlines service delivery workflows,
-          reduces manual effort, improves SLA adherence, and delivers a seamless experience for
-          service teams and end users.
+          A strategic initiative mapping and scaling AI capabilities across the services domain.
+          SAIL includes the <strong>Service Delivery Agent</strong> — an intelligent Agentforce agent
+          that streamlines service delivery workflows, reduces manual effort, improves SLA adherence,
+          and delivers a seamless experience for service teams and end users.
         </p>
         <div class="project-role">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
@@ -382,12 +536,12 @@
       <div class="project-card">
         <div class="project-status"><span class="dot"></span> In Progress</div>
         <h3>SOIL — Services Operations AI</h3>
-        <p>
-          An AI-driven program transforming services operations through intelligent automation
-          and insights. SOIL targets operational efficiency, proactive issue resolution, and smarter
-          resource management across the services ecosystem.
-        </p>
-        <div class="project-role">
+        <p>Q2–Q3 focus initiative transforming services operations through AI. Two P0 tracks:</p>
+        <ul style="margin-top:.75rem; padding-left:1.2rem; color:var(--muted); font-size:.88rem; line-height:1.9;">
+          <li><strong style="color:var(--text);">Agentforce Agents</strong> — Building the <em>Staffing Agent</em>, an Agentforce agent for operations resource optimisation management (ROM).</li>
+          <li><strong style="color:var(--text);">Agentforce Operations / Regrello</strong> — AI-augmented and AI rule-based workflows for Shared Services, including <em>Subco Invoice Reconciliation</em> and <em>QA Assist</em>.</li>
+        </ul>
+        <div class="project-role" style="margin-top:1.25rem;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           Product Owner
         </div>
@@ -397,11 +551,100 @@
   </div>
 </section>
 
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <p class="section-label">Academic Background</p>
+    <h2 class="section-title">My <span class="gradient-text">Education</span></h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-degree">Post Graduate Diploma in Management</div>
+        <div class="edu-field">Business & General Management</div>
+        <div class="edu-year">2024 – 2026</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">Bachelor of Technology</div>
+        <div class="edu-field">Electrical & Electronics Engineering</div>
+        <div class="edu-year">2018 – 2022</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS + PUBLICATION -->
+<section id="certifications">
+  <div class="container">
+    <p class="section-label">Achievements</p>
+    <h2 class="section-title">Certifications & <span class="gradient-text">Recognition</span></h2>
+
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-icon">🏆</div>
+        <div>
+          <div class="cert-name">Trailhead Ranger</div>
+          <div class="cert-issuer">Salesforce</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🤖</div>
+        <div>
+          <div class="cert-name">AgentBlazer Champion</div>
+          <div class="cert-issuer">Salesforce</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🌟</div>
+        <div>
+          <div class="cert-name">AgentBlazer Innovator</div>
+          <div class="cert-issuer">Salesforce</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🔍</div>
+        <div>
+          <div class="cert-name">Google AI Essentials</div>
+          <div class="cert-issuer">Google</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">📈</div>
+        <div>
+          <div class="cert-name">Digital Marketing</div>
+          <div class="cert-issuer">Google Digital Garage</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🔎</div>
+        <div>
+          <div class="cert-name">SEO Foundations</div>
+          <div class="cert-issuer">LinkedIn Learning</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 3rem;">
+      <p class="section-label" style="margin-bottom:1.25rem;">Publication</p>
+      <div class="pub-card">
+        <div class="pub-label">Research Paper</div>
+        <div class="pub-title">Smart Irrigation and Pest Detection System</div>
+        <div class="pub-desc">
+          Research on an IoT-integrated system combining smart irrigation control with automated pest detection
+          — applying sensor-based technology to optimise agricultural operations and reduce manual intervention.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
-  <p>Built with passion by <strong>Deepthi P</strong> &nbsp;·&nbsp;
-    <a href="https://github.com/deepthi-p" target="_blank">GitHub</a>
-  </p>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/deepthip-6b2579189" target="_blank">LinkedIn</a>
+    <a href="https://github.com/deepthiteito" target="_blank">GitHub</a>
+    <a href="mailto:deepthip18016@gmail.com">deepthip18016@gmail.com</a>
+  </div>
+  <p>Built with passion by <strong>Deepthi P</strong></p>
   <p style="margin-top:.5rem; font-size:.75rem; opacity:.5;">© 2026 Deepthi P. All rights reserved.</p>
 </footer>
 
